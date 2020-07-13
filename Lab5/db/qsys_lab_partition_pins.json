@@ -1,0 +1,305 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "hex3_hex0_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[9]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[10]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[11]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[12]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[13]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[14]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[15]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[16]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[17]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[18]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[19]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[20]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[21]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[22]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[23]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[24]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[25]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[26]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[27]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[28]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[29]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[30]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_hex0_export[31]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[9]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[10]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[11]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[12]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[13]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[14]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_hex4_export[15]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rled_export[9]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "pushbuttons_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pushbuttons_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pushbuttons_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pushbuttons_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[4]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[5]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switches_export[9]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

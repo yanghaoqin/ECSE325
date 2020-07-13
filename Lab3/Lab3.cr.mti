@@ -1,0 +1,20 @@
+{C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3.vhd}
+Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Lab3
+-- Compiling architecture arch of Lab3
+
+} {} {}} {C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3_tb.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3_tb.vhd}
+Model Technology ModelSim SE-64 vcom 10.4 Compiler 2014.12 Dec  3 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity Lab3_tb
+-- Compiling architecture test of Lab3_tb
+
+} {} {}}

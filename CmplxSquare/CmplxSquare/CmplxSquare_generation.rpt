@@ -1,0 +1,98 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\Raymond Yang\Desktop\FPGA\CmplxSquare\CmplxSquare.qsys" --block-symbol-file --output-directory="C:\Users\Raymond Yang\Desktop\FPGA\CmplxSquare\CmplxSquare" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading CmplxSquare/CmplxSquare.qsys
+Progress: Reading input file
+Progress: Adding CS_Processor [CmplxSquare 1.0]
+Progress: Reading input file
+Progress: Adding CS_Processor [CmplxSquare 1.0]
+Error: Component CmplxSquare can't instantiate a custom component with the same name as itself
+Warning: CS_Processor: Component type CmplxSquare is not in the library
+Progress: Parameterizing module CS_Processor
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Progress: Parameterizing module CS_Processor
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Error: CmplxSquare.CS_Processor.CS_Processor: Component CmplxSquare 1.0 not found or could not be instantiated
+Info: CmplxSquare.CS_Processor.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: CmplxSquare.CS_Processor.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: CmplxSquare.CS_Processor.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: CmplxSquare.CS_Processor.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: CmplxSquare.CS_Processor.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: CmplxSquare.CS_Processor.hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Warning: CmplxSquare.CS_Processor.hps_0: hps_0.f2h_stm_hw_events must be exported, or connected to a matching conduit.
+Error: CmplxSquare.CS_Processor.CS_Processor.avalon_slave_0: Data width must be of power of two and between 8 and 4096  
+Info: CmplxSquare.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: CmplxSquare.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: CmplxSquare.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: CmplxSquare.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: CmplxSquare.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: CmplxSquare.hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Error: CmplxSquare.hps_0.h2f_axi_master/CS_Processor.avalon_slave_0: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.clk_0.clk/CS_Processor.clock_sink: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.clk_0.clk_reset/CS_Processor.reset_sink: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.hps_0.h2f_reset/CS_Processor.reset_sink: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.CS_Processor: CS_Processor.clk must be connected to a clock output
+Warning: CmplxSquare.CS_Processor: CS_Processor.hps_io must be exported, or connected to a matching conduit.
+Warning: CmplxSquare.CS_Processor: CS_Processor.memory must be exported, or connected to a matching conduit.
+Warning: CmplxSquare.hps_0: hps_0.f2h_stm_hw_events must be exported, or connected to a matching conduit.
+Error: CmplxSquare.CS_Processor.avalon_slave_0: Data width must be of power of two and between 8 and 4096  
+Error: CmplxSquare.CS_Processor: CS_Processor.reset must be connected to a reset source
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\Raymond Yang\Desktop\FPGA\CmplxSquare\CmplxSquare.qsys" --synthesis=VHDL --output-directory="C:\Users\Raymond Yang\Desktop\FPGA\CmplxSquare\CmplxSquare\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading CmplxSquare/CmplxSquare.qsys
+Progress: Reading input file
+Progress: Adding CS_Processor [CmplxSquare 1.0]
+Progress: Parameterizing module CS_Processor
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Error: CmplxSquare.CS_Processor.CS_Processor: Component CmplxSquare 1.0 not found or could not be instantiated
+Info: CmplxSquare.CS_Processor.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: CmplxSquare.CS_Processor.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: CmplxSquare.CS_Processor.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: CmplxSquare.CS_Processor.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: CmplxSquare.CS_Processor.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: CmplxSquare.CS_Processor.hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Warning: CmplxSquare.CS_Processor.hps_0: hps_0.f2h_stm_hw_events must be exported, or connected to a matching conduit.
+Error: CmplxSquare.CS_Processor.CS_Processor.avalon_slave_0: Data width must be of power of two and between 8 and 4096  
+Info: CmplxSquare.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: CmplxSquare.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: CmplxSquare.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: CmplxSquare.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: CmplxSquare.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: CmplxSquare.hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Error: CmplxSquare.hps_0.h2f_axi_master/CS_Processor.avalon_slave_0: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.clk_0.clk/CS_Processor.clock_sink: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.clk_0.clk_reset/CS_Processor.reset_sink: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.hps_0.h2f_reset/CS_Processor.reset_sink: Missing connection end (try "Remove Dangling Connections")
+Error: CmplxSquare.CS_Processor: CS_Processor.clk must be connected to a clock output
+Warning: CmplxSquare.CS_Processor: CS_Processor.hps_io must be exported, or connected to a matching conduit.
+Warning: CmplxSquare.CS_Processor: CS_Processor.memory must be exported, or connected to a matching conduit.
+Warning: CmplxSquare.hps_0: hps_0.f2h_stm_hw_events must be exported, or connected to a matching conduit.
+Error: CmplxSquare.CS_Processor.avalon_slave_0: Data width must be of power of two and between 8 and 4096  
+Error: CmplxSquare.CS_Processor: CS_Processor.reset must be connected to a reset source
+Info: CmplxSquare: Generating CmplxSquare "CmplxSquare" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave CS_Processor.avalon_slave_0 because the master is of type axi and the slave is of type missing.
+Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave CS_Processor.avalon_slave_0 because they have different clock source.
+Error: null

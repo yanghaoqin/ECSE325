@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon Jul 13 02:38:16 2020
+Quartus Prime Version : 16.1.1 Build 200 11/30/2016 SJ Standard Edition
+Revision Name : qsys_lab
+Top-level Entity Name : qsys_lab
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 1610
+Total pins : 214
+Total virtual pins : 0
+Total block memory bits : 131,072
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 1

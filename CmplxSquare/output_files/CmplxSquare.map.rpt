@@ -1,0 +1,1426 @@
+Analysis & Synthesis report for CmplxSquare
+Mon Jul 13 06:39:18 2020
+Quartus Prime Version 16.1.1 Build 200 11/30/2016 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: LPM_MULT:mult1
+ 13. Parameter Settings for User Entity Instance: LPM_MULT:mult2
+ 14. Parameter Settings for User Entity Instance: LPM_MULT:mult3
+ 15. lpm_mult Parameter Settings by Entity Instance
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jul 13 06:39:18 2020           ;
+; Quartus Prime Version           ; 16.1.1 Build 200 11/30/2016 SJ Standard Edition ;
+; Revision Name                   ; CmplxSquare                                     ;
+; Top-level Entity Name           ; CmplxSquare_LPM                                 ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 967                                             ;
+; Total pins                      ; 196                                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 9                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; CmplxSquare_LPM    ; CmplxSquare        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; cmplxsquare_lpm.vhd              ; yes             ; Auto-Found VHDL File         ; C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/cmplxsquare_lpm.vhd ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga/16.1/quartus/libraries/megafunctions/lpm_mult.tdf     ;         ;
+; aglobal161.inc                   ; yes             ; Megafunction                 ; c:/intelfpga/16.1/quartus/libraries/megafunctions/aglobal161.inc   ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga/16.1/quartus/libraries/megafunctions/lpm_add_sub.inc  ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/16.1/quartus/libraries/megafunctions/multcore.inc     ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/16.1/quartus/libraries/megafunctions/bypassff.inc     ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/16.1/quartus/libraries/megafunctions/altshift.inc     ;         ;
+; db/mult_tbn.v                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/db/mult_tbn.v       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 484         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 203         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 0           ;
+;     -- 5 input functions                    ; 0           ;
+;     -- 4 input functions                    ; 0           ;
+;     -- <=3 input functions                  ; 203         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 967         ;
+;                                             ;             ;
+; I/O pins                                    ; 196         ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 9           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; i_clk~input ;
+; Maximum fan-out                             ; 967         ;
+; Total fan-out                               ; 3248        ;
+; Average fan-out                             ; 2.07        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name     ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
+; |CmplxSquare_LPM                ; 203 (65)            ; 967 (129)                 ; 0                 ; 9          ; 196  ; 0            ; |CmplxSquare_LPM                                        ; CmplxSquare_LPM ; work         ;
+;    |lpm_mult:mult1|             ; 46 (0)              ; 290 (0)                   ; 0                 ; 3          ; 0    ; 0            ; |CmplxSquare_LPM|lpm_mult:mult1                         ; lpm_mult        ; work         ;
+;       |mult_tbn:auto_generated| ; 46 (46)             ; 290 (290)                 ; 0                 ; 3          ; 0    ; 0            ; |CmplxSquare_LPM|lpm_mult:mult1|mult_tbn:auto_generated ; mult_tbn        ; work         ;
+;    |lpm_mult:mult2|             ; 46 (0)              ; 290 (0)                   ; 0                 ; 3          ; 0    ; 0            ; |CmplxSquare_LPM|lpm_mult:mult2                         ; lpm_mult        ; work         ;
+;       |mult_tbn:auto_generated| ; 46 (46)             ; 290 (290)                 ; 0                 ; 3          ; 0    ; 0            ; |CmplxSquare_LPM|lpm_mult:mult2|mult_tbn:auto_generated ; mult_tbn        ; work         ;
+;    |lpm_mult:mult3|             ; 46 (0)              ; 258 (0)                   ; 0                 ; 3          ; 0    ; 0            ; |CmplxSquare_LPM|lpm_mult:mult3                         ; lpm_mult        ; work         ;
+;       |mult_tbn:auto_generated| ; 46 (46)             ; 258 (258)                 ; 0                 ; 3          ; 0    ; 0            ; |CmplxSquare_LPM|lpm_mult:mult3|mult_tbn:auto_generated ; mult_tbn        ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Two Independent 18x18             ; 6           ;
+; Sum of two 18x18                  ; 3           ;
+; Total number of DSP blocks        ; 9           ;
+;                                   ;             ;
+; Fixed Point Signed Multiplier     ; 3           ;
+; Fixed Point Unsigned Multiplier   ; 3           ;
+; Fixed Point Mixed Sign Multiplier ; 6           ;
++-----------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                           ;
++---------------------------------------------------------------------+------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal                                                     ;
++---------------------------------------------------------------------+------------------------------------------------------------------------+
+; o_yy[0]~reg0                                                        ; Stuck at GND due to stuck port data_in                                 ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[0]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[1]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[2]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[3]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[4]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[5]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[6]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[7]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[8]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[9]         ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[10]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[11]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[12]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[13]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[14]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[15]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[16]        ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[17..63]    ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[0]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[1]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[2]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[3]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[4]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[5]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[6]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[7]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[8]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[9]         ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[10]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[11]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[12]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[13]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[14]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[15]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[16]        ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[17..63]    ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[0]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[1]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[2]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[3]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[4]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[5]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[6]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[7]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[8]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[9]         ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[10]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[11]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[12]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[13]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[14]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[15]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[16]        ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[17..63]    ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][33] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][34] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][35] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][36] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][37] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][33] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][34] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][35] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][36] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][37] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][33] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][34] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][35] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][36] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][37] ; Lost fanout                                                            ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[18]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[18] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[18]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[18] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[19]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[19] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[19]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[19] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[20]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[20] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[20]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[20] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[21]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[21] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[21]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[21] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[22]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[22] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[22]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[22] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[23]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[23] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[23]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[23] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[24]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[24] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[24]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[24] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[25]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[25] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[25]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[25] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[26]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[26] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[26]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[26] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[27]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[27] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[27]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[27] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[28]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[28] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[28]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[28] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[29]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[29] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[29]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[29] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[30]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[30] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[30]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[30] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[31]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[31] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[31]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[31] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[0]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[0]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[0]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[0]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[1]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[1]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[1]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[1]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[2]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[2]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[2]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[2]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[3]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[3]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[3]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[3]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[4]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[4]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[4]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[4]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[5]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[5]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[5]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[5]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[6]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[6]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[6]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[6]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[7]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[7]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[7]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[7]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[8]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[8]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[8]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[8]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[9]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[9]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[9]           ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[9]  ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[10]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[10] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[10]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[10] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[11]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[11] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[11]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[11] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[12]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[12] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[12]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[12] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[13]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[13] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[13]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[13] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[14]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[14] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[14]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[14] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[15]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[15] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[15]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[15] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[16]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[16] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[16]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[16] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|datab_input_reg[17]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[17] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|datab_input_reg[17]          ; Merged with lpm_mult:mult2|mult_tbn:auto_generated|dataa_input_reg[17] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[18]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[18] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[18]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[18] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[19]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[19] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[19]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[19] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[20]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[20] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[20]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[20] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[21]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[21] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[21]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[21] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[22]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[22] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[22]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[22] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[23]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[23] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[23]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[23] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[24]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[24] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[24]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[24] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[25]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[25] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[25]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[25] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[26]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[26] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[26]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[26] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[27]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[27] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[27]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[27] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[28]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[28] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[28]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[28] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[29]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[29] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[29]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[29] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[30]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[30] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[30]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[30] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[31]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[31] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[31]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[31] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[0]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[0]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[0]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[0]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[1]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[1]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[1]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[1]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[2]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[2]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[2]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[2]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[3]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[3]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[3]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[3]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[4]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[4]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[4]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[4]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[5]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[5]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[5]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[5]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[6]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[6]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[6]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[6]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[7]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[7]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[7]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[7]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[8]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[8]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[8]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[8]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[9]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[9]  ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[9]           ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[9]  ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[10]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[10] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[10]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[10] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[11]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[11] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[11]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[11] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[12]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[12] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[12]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[12] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[13]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[13] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[13]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[13] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[14]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[14] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[14]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[14] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[15]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[15] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[15]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[15] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[16]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[16] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[16]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[16] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|datab_input_reg[17]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[17] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|dataa_input_reg[17]          ; Merged with lpm_mult:mult1|mult_tbn:auto_generated|dataa_input_reg[17] ;
+; Total Number of Removed Registers = 789                             ;                                                                        ;
++---------------------------------------------------------------------+------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                    ;
++---------------------------------------------------------------------+--------------------+---------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal ; Registers Removed due to This Register                              ;
++---------------------------------------------------------------------+--------------------+---------------------------------------------------------------------+
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[0]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[1]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[2]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[3]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[4]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[5]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[6]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[7]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[8]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[9]         ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[10]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[11]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[12]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[13]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[14]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[15]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[16]        ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|result_extra0_reg[17]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[0]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[1]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[2]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[3]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[4]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[5]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[6]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[7]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[8]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[9]         ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[10]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[11]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[12]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[13]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[14]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[15]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[16]        ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|result_extra0_reg[17]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[0]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[1]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[2]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[3]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[4]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[5]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[6]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[7]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[8]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[9]         ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[10]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[11]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[12]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[13]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[14]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[15]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[16]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_ll_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|result_extra0_reg[17]        ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][0]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][0]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][1]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][1]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][2]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][2]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][3]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][3]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][4]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][4]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][5]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][5]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][6]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][6]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][7]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][7]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][8]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][8]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][9]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][9]       ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][10]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][10]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][11]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][11]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][12]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][12]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][13]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][13]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][14]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][14]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][15]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][15]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][16]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][16]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][17]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][17]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][18]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][18]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][18]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][18]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][19]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][19]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][19]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][19]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][20]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][20]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][20]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][20]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][21]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][21]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][21]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][21]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][22]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][22]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][22]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][22]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][23]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][23]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][23]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][23]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][24]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][24]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][24]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][24]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][25]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][25]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][25]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][25]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][26]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][26]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][26]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][26]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][27]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][27]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][27]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][27]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][28]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][28]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][28]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][28]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][29]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][29]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][29]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][29]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][30]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][30]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][30]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][30]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][31]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][31]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][31]      ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][31]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][0]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][0]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][1]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][1]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][2]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][2]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][3]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][3]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][4]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][4]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][5]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][5]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][6]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][6]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][7]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][7]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][8]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][8]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][9]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][9]       ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][10]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][10]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][11]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][11]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][12]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][12]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][13]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][13]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][14]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][14]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][15]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][15]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][16]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][16]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][17]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][17]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][18]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][18]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][18]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][18]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][19]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][19]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][19]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][19]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][20]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][20]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][20]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][20]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][21]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][21]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][21]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][21]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][22]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][22]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][22]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][22]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][23]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][23]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][23]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][23]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][24]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][24]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][24]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][24]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][25]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][25]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][25]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][25]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][26]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][26]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][26]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][26]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][27]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][27]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][27]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][27]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][28]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][28]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][28]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][28]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][29]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][29]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][29]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][29]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][30]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][30]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][30]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][30]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][31]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][31]      ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][31]      ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][31]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][0]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][0]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][0]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][1]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][1]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][1]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][2]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][2]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][2]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][3]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][3]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][3]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][4]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][4]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][4]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][5]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][5]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][5]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][6]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][6]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][6]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][7]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][7]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][7]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][8]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][8]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][8]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][9]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][9]       ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][9]       ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][10]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][10]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][10]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][11]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][11]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][11]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][12]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][12]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][12]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][13]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][13]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][13]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][14]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][14]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][14]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][15]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][15]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][15]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][16]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][16]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][16]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][17]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][17]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][17]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][18]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][18]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][18]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][18]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][19]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][19]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][19]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][19]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][20]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][20]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][20]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][20]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][21]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][21]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][21]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][21]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][22]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][22]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][22]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][22]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][23]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][23]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][23]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][23]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][24]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][24]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][24]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][24]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][25]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][25]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][25]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][25]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][26]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][26]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][26]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][26]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][27]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][27]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][27]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][27]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][28]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][28]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][28]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][28]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][29]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][29]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][29]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][29]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][30]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][30]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][30]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][30]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[1][31]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_lh_pl[0][31]      ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[1][31]      ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~mult_hl_pl[0][31]      ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][33] ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][34] ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][35] ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][36] ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ;
+; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][37] ; Lost Fanouts       ; lpm_mult:mult1|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][33] ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][34] ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][35] ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][36] ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ;
+; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][37] ; Lost Fanouts       ; lpm_mult:mult2|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][33] ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][34] ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][35] ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][36] ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ;
+; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[1][37] ; Lost Fanouts       ; lpm_mult:mult3|mult_tbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ;
++---------------------------------------------------------------------+--------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 967   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 129   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MULT:mult1                      ;
++------------------------------------------------+-----------+---------------------+
+; Parameter Name                                 ; Value     ; Type                ;
++------------------------------------------------+-----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON        ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF       ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON        ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF       ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHB                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHP                                     ; 64        ; Signed Integer      ;
+; LPM_WIDTHR                                     ; 0         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1         ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED    ; Untyped             ;
+; LPM_PIPELINE                                   ; 4         ; Signed Integer      ;
+; LATENCY                                        ; 0         ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO        ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO        ; Untyped             ;
+; USE_EAB                                        ; OFF       ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5         ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone V ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL    ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT       ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO      ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0         ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_tbn  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF       ; Untyped             ;
++------------------------------------------------+-----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MULT:mult2                      ;
++------------------------------------------------+-----------+---------------------+
+; Parameter Name                                 ; Value     ; Type                ;
++------------------------------------------------+-----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON        ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF       ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON        ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF       ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHB                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHP                                     ; 64        ; Signed Integer      ;
+; LPM_WIDTHR                                     ; 0         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1         ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED    ; Untyped             ;
+; LPM_PIPELINE                                   ; 4         ; Signed Integer      ;
+; LATENCY                                        ; 0         ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO        ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO        ; Untyped             ;
+; USE_EAB                                        ; OFF       ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5         ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone V ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL    ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT       ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO      ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0         ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_tbn  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF       ; Untyped             ;
++------------------------------------------------+-----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MULT:mult3                      ;
++------------------------------------------------+-----------+---------------------+
+; Parameter Name                                 ; Value     ; Type                ;
++------------------------------------------------+-----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON        ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF       ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON        ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF       ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHB                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHP                                     ; 64        ; Signed Integer      ;
+; LPM_WIDTHR                                     ; 0         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1         ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED    ; Untyped             ;
+; LPM_PIPELINE                                   ; 4         ; Signed Integer      ;
+; LATENCY                                        ; 0         ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO        ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO        ; Untyped             ;
+; USE_EAB                                        ; OFF       ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5         ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone V ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL    ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT       ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO      ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0         ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_tbn  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF       ; Untyped             ;
++------------------------------------------------+-----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 3              ;
+; Entity Instance                       ; LPM_MULT:mult1 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; LPM_MULT:mult2 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; LPM_MULT:mult3 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 967                         ;
+;     CLR               ; 129                         ;
+;     plain             ; 838                         ;
+; arriav_lcell_comb     ; 204                         ;
+;     arith             ; 138                         ;
+;         2 data inputs ; 138                         ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+;     shared            ; 65                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 64                          ;
+; arriav_mac            ; 9                           ;
+; boundary_port         ; 196                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.40                        ;
+; Average LUT depth     ; 2.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.1 Build 200 11/30/2016 SJ Standard Edition
+    Info: Processing started: Mon Jul 13 06:39:08 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CmplxSquare -c CmplxSquare
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file cmplxsquare_qsys.vhd
+    Info (12022): Found design unit 1: CmplxSquare_QSYS-behavior File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/CmplxSquare_QSYS.vhd Line: 16
+    Info (12023): Found entity 1: CmplxSquare_QSYS File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/CmplxSquare_QSYS.vhd Line: 7
+Warning (12125): Using design file cmplxsquare_lpm.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: CmplxSquare_LPM-behavior File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/cmplxsquare_lpm.vhd Line: 15
+    Info (12023): Found entity 1: CmplxSquare_LPM File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/cmplxsquare_lpm.vhd Line: 7
+Info (12127): Elaborating entity "CmplxSquare_LPM" for the top level hierarchy
+Info (12128): Elaborating entity "LPM_MULT" for hierarchy "LPM_MULT:mult1" File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/CmplxSquare_LPM.vhd Line: 39
+Info (12130): Elaborated megafunction instantiation "LPM_MULT:mult1" File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/CmplxSquare_LPM.vhd Line: 39
+Info (12133): Instantiated megafunction "LPM_MULT:mult1" with the following parameter: File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/CmplxSquare_LPM.vhd Line: 39
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_PIPELINE" = "4"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_MULT"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_tbn.v
+    Info (12023): Found entity 1: mult_tbn File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/db/mult_tbn.v Line: 29
+Info (12128): Elaborating entity "mult_tbn" for hierarchy "LPM_MULT:mult1|mult_tbn:auto_generated" File: c:/intelfpga/16.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 377
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o_yy[0]" is stuck at GND File: C:/Users/Raymond Yang/Desktop/FPGA/CmplxSquare/CmplxSquare_LPM.vhd Line: 64
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 660 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1172 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 66 input pins
+    Info (21059): Implemented 130 output pins
+    Info (21061): Implemented 967 logic cells
+    Info (21062): Implemented 9 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4912 megabytes
+    Info: Processing ended: Mon Jul 13 06:39:18 2020
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
+
+

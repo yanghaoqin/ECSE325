@@ -1,0 +1,159 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\Raymond Yang\Desktop\FPGA\Lab5\qsys_lab.qsys" --block-symbol-file --output-directory="C:\Users\Raymond Yang\Desktop\FPGA\Lab5\qsys_lab" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading Lab5/qsys_lab.qsys
+Progress: Reading input file
+Progress: Adding HEX3_HEX0 [altera_avalon_pio 16.1]
+Progress: Parameterizing module HEX3_HEX0
+Progress: Adding HEX5_HEX4 [altera_avalon_pio 16.1]
+Progress: Parameterizing module HEX5_HEX4
+Progress: Adding LEDS [altera_avalon_pio 16.1]
+Progress: Parameterizing module LEDS
+Progress: Adding PUSHBUTTONS [altera_avalon_pio 16.1]
+Progress: Parameterizing module PUSHBUTTONS
+Progress: Adding SRAM [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module SRAM
+Progress: Adding SWITCHES [altera_avalon_pio 16.1]
+Progress: Parameterizing module SWITCHES
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.1]
+Progress: Parameterizing module hps_0
+Progress: Adding qsys_lab_custom_component_0 [qsys_lab_custom_component 1.0]
+Progress: Parameterizing module qsys_lab_custom_component_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys_lab.PUSHBUTTONS: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: qsys_lab.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: qsys_lab.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: qsys_lab.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: qsys_lab.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: qsys_lab.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: qsys_lab.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: qsys_lab.hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Warning: qsys_lab.hps_0: hps_0.f2h_stm_hw_events must be exported, or connected to a matching conduit.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\Raymond Yang\Desktop\FPGA\Lab5\qsys_lab.qsys" --synthesis=VHDL --output-directory="C:\Users\Raymond Yang\Desktop\FPGA\Lab5\qsys_lab\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading Lab5/qsys_lab.qsys
+Progress: Reading input file
+Progress: Adding HEX3_HEX0 [altera_avalon_pio 16.1]
+Progress: Parameterizing module HEX3_HEX0
+Progress: Adding HEX5_HEX4 [altera_avalon_pio 16.1]
+Progress: Parameterizing module HEX5_HEX4
+Progress: Adding LEDS [altera_avalon_pio 16.1]
+Progress: Parameterizing module LEDS
+Progress: Adding PUSHBUTTONS [altera_avalon_pio 16.1]
+Progress: Parameterizing module PUSHBUTTONS
+Progress: Adding SRAM [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module SRAM
+Progress: Adding SWITCHES [altera_avalon_pio 16.1]
+Progress: Parameterizing module SWITCHES
+Progress: Adding clk_0 [clock_source 16.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 16.1]
+Progress: Parameterizing module hps_0
+Progress: Adding qsys_lab_custom_component_0 [qsys_lab_custom_component 1.0]
+Progress: Parameterizing module qsys_lab_custom_component_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys_lab.PUSHBUTTONS: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: qsys_lab.SWITCHES: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: qsys_lab.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: qsys_lab.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: qsys_lab.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: qsys_lab.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: qsys_lab.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: qsys_lab.hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Warning: qsys_lab.hps_0: hps_0.f2h_stm_hw_events must be exported, or connected to a matching conduit.
+Info: qsys_lab: Generating qsys_lab "qsys_lab" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave SRAM.s1 because the master is of type axi and the slave is of type avalon.
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
+Info: HEX3_HEX0: Starting RTL generation for module 'qsys_lab_HEX3_HEX0'
+Info: HEX3_HEX0:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=qsys_lab_HEX3_HEX0 --dir=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0002_HEX3_HEX0_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0002_HEX3_HEX0_gen//qsys_lab_HEX3_HEX0_component_configuration.pl  --do_build_sim=0  ]
+Info: HEX3_HEX0: Done RTL generation for module 'qsys_lab_HEX3_HEX0'
+Info: HEX3_HEX0: "qsys_lab" instantiated altera_avalon_pio "HEX3_HEX0"
+Info: HEX5_HEX4: Starting RTL generation for module 'qsys_lab_HEX5_HEX4'
+Info: HEX5_HEX4:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=qsys_lab_HEX5_HEX4 --dir=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0003_HEX5_HEX4_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0003_HEX5_HEX4_gen//qsys_lab_HEX5_HEX4_component_configuration.pl  --do_build_sim=0  ]
+Info: HEX5_HEX4: Done RTL generation for module 'qsys_lab_HEX5_HEX4'
+Info: HEX5_HEX4: "qsys_lab" instantiated altera_avalon_pio "HEX5_HEX4"
+Info: LEDS: Starting RTL generation for module 'qsys_lab_LEDS'
+Info: LEDS:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=qsys_lab_LEDS --dir=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0004_LEDS_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0004_LEDS_gen//qsys_lab_LEDS_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDS: Done RTL generation for module 'qsys_lab_LEDS'
+Info: LEDS: "qsys_lab" instantiated altera_avalon_pio "LEDS"
+Info: PUSHBUTTONS: Starting RTL generation for module 'qsys_lab_PUSHBUTTONS'
+Info: PUSHBUTTONS:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=qsys_lab_PUSHBUTTONS --dir=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0005_PUSHBUTTONS_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0005_PUSHBUTTONS_gen//qsys_lab_PUSHBUTTONS_component_configuration.pl  --do_build_sim=0  ]
+Info: PUSHBUTTONS: Done RTL generation for module 'qsys_lab_PUSHBUTTONS'
+Info: PUSHBUTTONS: "qsys_lab" instantiated altera_avalon_pio "PUSHBUTTONS"
+Info: SRAM: Starting RTL generation for module 'qsys_lab_SRAM'
+Info: SRAM:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=qsys_lab_SRAM --dir=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0006_SRAM_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0006_SRAM_gen//qsys_lab_SRAM_component_configuration.pl  --do_build_sim=0  ]
+Info: SRAM: Done RTL generation for module 'qsys_lab_SRAM'
+Info: SRAM: "qsys_lab" instantiated altera_avalon_onchip_memory2 "SRAM"
+Info: SWITCHES: Starting RTL generation for module 'qsys_lab_SWITCHES'
+Info: SWITCHES:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=qsys_lab_SWITCHES --dir=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0007_SWITCHES_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/RAYMON~1/AppData/Local/Temp/alt8456_4441777494625267388.dir/0007_SWITCHES_gen//qsys_lab_SWITCHES_component_configuration.pl  --do_build_sim=0  ]
+Info: SWITCHES: Done RTL generation for module 'qsys_lab_SWITCHES'
+Info: SWITCHES: "qsys_lab" instantiated altera_avalon_pio "SWITCHES"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: hps_0: ECC will be enabled in the preloader because an interface width of 24 or 40 has been chosen.
+Info: hps_0: "qsys_lab" instantiated altera_hps "hps_0"
+Info: qsys_lab_custom_component_0: "qsys_lab" instantiated qsys_lab_custom_component "qsys_lab_custom_component_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "qsys_lab" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "qsys_lab" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: irq_mapper: "qsys_lab" instantiated altera_irq_mapper "irq_mapper"
+Info: irq_mapper_001: "qsys_lab" instantiated altera_irq_mapper "irq_mapper_001"
+Info: rst_controller: "qsys_lab" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: SRAM_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "SRAM_s1_translator"
+Info: hps_0_h2f_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_axi_master_agent"
+Info: SRAM_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "SRAM_s1_agent"
+Info: SRAM_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "SRAM_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: SRAM_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "SRAM_s1_burst_adapter"
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: SRAM_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "SRAM_s1_rsp_width_adapter"
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/Raymond Yang/Desktop/FPGA/Lab5/qsys_lab/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: qsys_lab: Done "qsys_lab" with 38 modules, 97 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

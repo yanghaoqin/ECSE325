@@ -1,0 +1,95 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use STD.TEXTIO.ALL;
+use IEEE.STD_LOGIC_TEXTIO.ALL;
+
+entity Lab3_tb is
+end Lab3_tb;
+
+architecture test of Lab3_tb is
+
+component Lab3 is
+    Port(	x:			in		std_logic_Vector(15 downto 0);
+            clk:		in		std_logic;
+            rst:		in		std_logic;
+            y:			out	    std_logic_vector(16 downto 0)
+		);
+end component Lab3;
+
+file file_VECTORS_X:	text;
+file file_VECTORS_Y:	text;
+file file_RESULTS:	text;
+
+constant T_clk: time := 100 ns;
+
+signal x_in:    std_logic_vector(15 downto 0);
+signal clk_in:  std_logic;
+signal rst_in:  std_logic;
+signal y_out:   std_logic_vector(16 downto 0);
+
+begin
+Lab3_inst: Lab3
+	port map(
+		x => x_in,
+        clk => clk_in,
+        rst => rst_in,
+		y => y_out);
+
+clk_gen: process
+begin
+	clk_in <= '1';
+	wait for T_clk / 2;
+	clk_in <= '0';
+	wait for T_clk / 2;
+end process clk_gen;
+
+feeding_instr: process
+	variable v_Iline1:	line;
+	variable v_Iline2:	line;
+	variable v_Oline:	line;
+	variable v_x_in:	std_logic_vector(15 downto 0);
+    variable count:     integer := 0;
+begin
+	
+	rst_in = '0';	
+
+    file_open(file_VECTORS_X, "C:\Users\Raymond Yang\Desktop\FPGA\Lab3\lab3x.txt", read_mode);
+    file_open(file_RESULTS, "C:\Users\Raymond Yang\Desktop\FPGA\Lab3\lab3out.txt", write_mode);
+
+    while not endfile (file_VECTORS_X) loop
+   		readline(file_VECTORS_X, v_Iline1);
+        read(v_Iline1, v_x_in);
+      
+        x_in <= v_x_in;
+    
+        wait until rising_edge(clk_in);
+		if count = 0 then
+			-- do nothing
+		else
+        	write(v_Oline, y_out);
+        	writeline(file_RESULTS, v_Oline);
+		end if;
+        count := count + 1;
+    end loop;
+
+	wait until rising_edge(clk_in);
+    write(v_Oline, y_out);
+    writeline(file_RESULTS, v_Oline);
+	
+	file_close(file_VECTORS_X);
+	file_close(file_RESULTS);
+
+wait;
+end process feeding_instr;
+
+end test;
+
+
+
+
+
+
+
+
+

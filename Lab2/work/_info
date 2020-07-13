@@ -1,0 +1,112 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Raymond Yang/Desktop/FPGA/Lab2
+T_opt
+!s110 1594539816
+Vf2ZA@0_Xo?K5o^GnFe?fV3
+04 7 4 work lab2_tb test 1
+=32-482ae33fc167-5f0abf28-2f2-1148
+Z1 o-quiet -auto_acc_if_foreign -work work
+n@_opt
+Z2 OL;O;10.4;61
+R0
+T_opt1
+!s110 1594540137
+V[E0jZEagmjn>UkgaFblDR1
+04 4 4 work lab2 arch 1
+=1-482ae33fc167-5f0ac069-a5-cb4
+R1
+n@_opt1
+R2
+R0
+Elab2
+Z3 w1594539808
+Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z7 8C:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2.vhd
+Z8 FC:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2.vhd
+l0
+L5
+V<N8_>E;=Lk5Xa4[PeL1Xk1
+!s100 =9:ZMUXn=Kj86eOjo:h4Y2
+Z9 OL;C;10.4;61
+32
+Z10 !s110 1594540284
+!i10b 1
+Z11 !s108 1594540284.702000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2.vhd|
+Z13 !s107 C:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2.vhd|
+!i113 0
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1
+Aarch
+R4
+R5
+R6
+Z16 DEx4 work 4 lab2 0 22 <N8_>E;=Lk5Xa4[PeL1Xk1
+l19
+L15
+Z17 VGI]?65z9oPVRSm[IW>[;41
+Z18 !s100 _1<^Re5dHK8RIXMAf:h=^0
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Elab2_tb
+Z19 w1594538347
+Z20 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R4
+R5
+R6
+R0
+Z21 8C:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2_tb.vhd
+Z22 FC:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2_tb.vhd
+l0
+L7
+VgmJUbH95lT6dAb;<R6neT0
+!s100 K3W`M3HO?BGeBc7H_aMI30
+R9
+32
+R10
+!i10b 1
+Z23 !s108 1594540284.624000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2_tb.vhd|
+Z25 !s107 C:/Users/Raymond Yang/Desktop/FPGA/Lab2/Lab2_tb.vhd|
+!i113 0
+R14
+R15
+Atest
+R20
+R4
+R5
+R6
+DEx4 work 7 lab2_tb 0 22 gmJUbH95lT6dAb;<R6neT0
+l36
+L10
+VK3j<gX[4J<9EBc9Da2KHX1
+!s100 0gKVOL9eA<zVRg8F2Un632
+R9
+32
+R10
+!i10b 1
+R23
+R24
+R25
+!i113 0
+R14
+R15

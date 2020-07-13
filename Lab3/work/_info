@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Raymond Yang/Desktop
+T_opt
+!s110 1594570712
+VnTU0:0Yb>WQ6W77Y>H2OX3
+04 7 4 work lab3_tb test 1
+=7-482ae33fc167-5f0b37d8-34c-3ad8
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4;61
+Elab3
+Z0 w1594570527
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/Raymond Yang/Desktop/FPGA/Lab3
+Z5 8C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3.vhd
+Z6 FC:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3.vhd
+l0
+L5
+V5J4ON>:_EP52f5QgnV^E>3
+!s100 7S<76JU0MME0T4=Pc9aMH3
+Z7 OL;C;10.4;61
+32
+Z8 !s110 1594570711
+!i10b 1
+Z9 !s108 1594570711.156000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3.vhd|
+Z11 !s107 C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3.vhd|
+!i113 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Aarch
+R1
+R2
+R3
+DEx4 work 4 lab3 0 22 5J4ON>:_EP52f5QgnV^E>3
+l43
+L13
+VCXmKMgk8^AQ^QP3`F<ffo1
+!s100 2MBAA]5Nid1H]@e9N?eR`3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Elab3_tb
+Z14 w1594570696
+Z15 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R1
+R2
+R3
+R4
+Z16 8C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3_tb.vhd
+Z17 FC:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3_tb.vhd
+l0
+L7
+V93E?1MYIb[5VjK8Sm3ORd1
+!s100 ND]^dFD0eLRSSW_`je>_:1
+R7
+32
+R8
+!i10b 1
+Z18 !s108 1594570711.234000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3_tb.vhd|
+Z20 !s107 C:/Users/Raymond Yang/Desktop/FPGA/Lab3/Lab3_tb.vhd|
+!i113 0
+R12
+R13
+Atest
+R15
+R1
+R2
+R3
+DEx4 work 7 lab3_tb 0 22 93E?1MYIb[5VjK8Sm3ORd1
+l31
+L10
+V>UZ:a;B29@amjjPCG_edn1
+!s100 G>96QK[fE9YP4ZEVYILfh0
+R7
+32
+R8
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R12
+R13

@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Raymond Yang/Desktop/Lab1
+Elab1
+Z0 w1594397772
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 45
+Z4 dC:/Users/Raymond Yang/Desktop/FPGA
+Z5 8C:/Users/Raymond Yang/Desktop/FPGA/Lab1.vhd
+Z6 FC:/Users/Raymond Yang/Desktop/FPGA/Lab1.vhd
+l0
+L5 1
+V0L>_J`aYe2MBnXbc?2<O<1
+!s100 74=9F8AYTD9ESm[fBfHcc1
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1594397784
+!i10b 1
+Z9 !s108 1594397784.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Raymond Yang/Desktop/FPGA/Lab1.vhd|
+Z11 !s107 C:/Users/Raymond Yang/Desktop/FPGA/Lab1.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Astruct
+R1
+R2
+R3
+DEx4 work 4 lab1 0 22 0L>_J`aYe2MBnXbc?2<O<1
+!i122 45
+l16
+L14 24
+VSbPXfG=4YX2FV9TVIihcZ3
+!s100 hOo2`3Q30Ee[TX_8lF;Z`2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Elab1_tb
+Z14 w1594397020
+R1
+R2
+R3
+!i122 46
+R4
+Z15 8C:/Users/Raymond Yang/Desktop/FPGA/Lab1_tb.vhd
+Z16 FC:/Users/Raymond Yang/Desktop/FPGA/Lab1_tb.vhd
+l0
+L5 1
+VJJI0V?j42_ITG1Lk^HT0C0
+!s100 K@UiQ@G0TFUS@iaYiU1Ze0
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Raymond Yang/Desktop/FPGA/Lab1_tb.vhd|
+Z18 !s107 C:/Users/Raymond Yang/Desktop/FPGA/Lab1_tb.vhd|
+!i113 1
+R12
+R13
+Atest
+R1
+R2
+R3
+Z19 DEx4 work 7 lab1_tb 0 22 JJI0V?j42_ITG1Lk^HT0C0
+!i122 46
+l25
+Z20 L8 55
+Z21 V8<TNncabKSXRVVZSCcz[M0
+Z22 !s100 cUMkTRmb351MjNkE@bYH20
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13

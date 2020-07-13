@@ -1,0 +1,77 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst qsys_lab.hps_0.scu -pg 1
+preplace inst qsys_lab.hps_0.axi_ocram -pg 1
+preplace inst qsys_lab.hps_0.usb1 -pg 1
+preplace inst qsys_lab.hps_0.gpio2 -pg 1
+preplace inst qsys_lab.hps_0.sysmgr -pg 1
+preplace inst qsys_lab.hps_0.L2 -pg 1
+preplace inst qsys_lab.clk_0 -pg 1 -lvl 1 -y 370
+preplace inst qsys_lab.LEDS -pg 1 -lvl 3 -y 430
+preplace inst qsys_lab.hps_0.i2c0 -pg 1
+preplace inst qsys_lab.hps_0.f2s_periph_ref_clk -pg 1
+preplace inst qsys_lab.HEX5_HEX4 -pg 1 -lvl 3 -y 250
+preplace inst qsys_lab.hps_0.i2c1 -pg 1
+preplace inst qsys_lab.hps_0.clk_0 -pg 1
+preplace inst qsys_lab.hps_0.spim0 -pg 1
+preplace inst qsys_lab.hps_0.i2c2 -pg 1
+preplace inst qsys_lab.hps_0.timer0 -pg 1
+preplace inst qsys_lab.hps_0.rstmgr -pg 1
+preplace inst qsys_lab.hps_0.l3regs -pg 1
+preplace inst qsys_lab.hps_0.sdmmc -pg 1
+preplace inst qsys_lab.hps_0.spim1 -pg 1
+preplace inst qsys_lab.hps_0.i2c3 -pg 1
+preplace inst qsys_lab.hps_0.timer1 -pg 1
+preplace inst qsys_lab.hps_0.fpgamgr -pg 1
+preplace inst qsys_lab.hps_0.hps_io.border -pg 1
+preplace inst qsys_lab.PUSHBUTTONS -pg 1 -lvl 3 -y 130
+preplace inst qsys_lab.hps_0.axi_sdram -pg 1
+preplace inst qsys_lab.hps_0.timer2 -pg 1
+preplace inst qsys_lab.hps_0.dma -pg 1
+preplace inst qsys_lab.hps_0.bridges -pg 1
+preplace inst qsys_lab.HEX3_HEX0 -pg 1 -lvl 3 -y 30
+preplace inst qsys_lab.hps_0.timer -pg 1
+preplace inst qsys_lab.hps_0.wd_timer0 -pg 1
+preplace inst qsys_lab.hps_0.timer3 -pg 1
+preplace inst qsys_lab.hps_0.uart0 -pg 1
+preplace inst qsys_lab.SRAM -pg 1 -lvl 3 -y 350
+preplace inst qsys_lab -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst qsys_lab.hps_0.dcan0 -pg 1
+preplace inst qsys_lab.hps_0.qspi -pg 1
+preplace inst qsys_lab.hps_0.wd_timer1 -pg 1
+preplace inst qsys_lab.hps_0.uart1 -pg 1
+preplace inst qsys_lab.hps_0.sdrctl -pg 1
+preplace inst qsys_lab.hps_0.dcan1 -pg 1
+preplace inst qsys_lab.hps_0.nand0 -pg 1
+preplace inst qsys_lab.hps_0.clkmgr -pg 1
+preplace inst qsys_lab.hps_0.arm_a9_0 -pg 1
+preplace inst qsys_lab.hps_0.eosc1 -pg 1
+preplace inst qsys_lab.hps_0 -pg 1 -lvl 2 -y 200
+preplace inst qsys_lab.SWITCHES -pg 1 -lvl 3 -y 530
+preplace inst qsys_lab.hps_0.gmac0 -pg 1
+preplace inst qsys_lab.hps_0.arm_a9_1 -pg 1
+preplace inst qsys_lab.hps_0.f2s_sdram_ref_clk -pg 1
+preplace inst qsys_lab.hps_0.eosc2 -pg 1
+preplace inst qsys_lab.hps_0.gmac1 -pg 1
+preplace inst qsys_lab.hps_0.gpio0 -pg 1
+preplace inst qsys_lab.hps_0.arm_gic_0 -pg 1
+preplace inst qsys_lab.hps_0.fpga_interfaces -pg 1
+preplace inst qsys_lab.hps_0.usb0 -pg 1
+preplace inst qsys_lab.hps_0.gpio1 -pg 1
+preplace inst qsys_lab.hps_0.hps_io -pg 1
+preplace netloc FAN_OUT<net_container>qsys_lab</net_container>(SLAVE)SWITCHES.s1,(MASTER)hps_0.h2f_lw_axi_master,(SLAVE)LEDS.s1,(SLAVE)PUSHBUTTONS.s1,(SLAVE)HEX3_HEX0.s1,(SLAVE)HEX5_HEX4.s1) 1 2 1 720
+preplace netloc INTERCONNECT<net_container>qsys_lab</net_container>(SLAVE)SRAM.reset1,(SLAVE)SWITCHES.reset,(SLAVE)HEX3_HEX0.reset,(SLAVE)hps_0.f2h_warm_reset_req,(SLAVE)hps_0.f2h_debug_reset_req,(SLAVE)HEX5_HEX4.reset,(SLAVE)hps_0.f2h_cold_reset_req,(MASTER)clk_0.clk_reset,(SLAVE)PUSHBUTTONS.reset,(MASTER)hps_0.h2f_reset,(SLAVE)LEDS.reset) 1 1 2 290 580 740
+preplace netloc POINT_TO_POINT<net_container>qsys_lab</net_container>(MASTER)hps_0.f2h_irq0,(SLAVE)PUSHBUTTONS.irq) 1 2 1 680
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)qsys_lab.rled,(SLAVE)LEDS.external_connection) 1 0 3 NJ 460 NJ 460 NJ
+preplace netloc POINT_TO_POINT<net_container>qsys_lab</net_container>(SLAVE)SRAM.s1,(MASTER)hps_0.h2f_axi_master) 1 2 1 660
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)qsys_lab.switches,(SLAVE)SWITCHES.external_connection) 1 0 3 NJ 560 NJ 560 NJ
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)qsys_lab.hex3_hex0,(SLAVE)HEX3_HEX0.external_connection) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc FAN_OUT<net_container>qsys_lab</net_container>(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)hps_0.h2f_axi_clock,(MASTER)clk_0.clk,(SLAVE)hps_0.f2h_axi_clock,(SLAVE)HEX5_HEX4.clk,(SLAVE)PUSHBUTTONS.clk,(SLAVE)SRAM.clk1,(SLAVE)SWITCHES.clk,(SLAVE)HEX3_HEX0.clk,(SLAVE)LEDS.clk) 1 1 2 330 480 700
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)PUSHBUTTONS.external_connection,(SLAVE)qsys_lab.pushbuttons) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)qsys_lab.memory,(SLAVE)hps_0.memory) 1 0 2 NJ 360 NJ
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)qsys_lab.hex5_hex4,(SLAVE)HEX5_HEX4.external_connection) 1 0 3 NJ 440 NJ 440 NJ
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)qsys_lab.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)qsys_lab.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>qsys_lab</net_container>(SLAVE)hps_0.hps_io,(SLAVE)qsys_lab.hps_io) 1 0 2 NJ 330 NJ
+levelinfo -pg 1 0 80 930
+levelinfo -hier qsys_lab 90 120 470 770 920

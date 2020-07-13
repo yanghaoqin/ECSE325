@@ -1,0 +1,68 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Lab3 is
+	Port(	x:			in		std_logic_Vector(15 downto 0);
+			clk:		in		std_logic;
+			rst:		in		std_logic;
+			y:			out		std_logic_vector(16 downto 0) := (others => '0')
+	);
+end Lab3;
+
+architecture arch of Lab3 is
+
+	type ARRAY25_16 is array(24 downto 0) of signed(15 downto 0);
+	constant b:		ARRAY25_16 := (0 => "0000001001110010",
+											1 => "0000000000010001",
+											2 => "1111111111010011",
+											3 => "1111111011011110",
+											4 => "0000001100011001",
+											5 => "1111110110100111",
+											6 => "1111110000001110",
+											7 => "0000110110111100",
+											8 => "1110110001110011",
+											9 => "0000110111110111",
+											10 => "0000001100000111",
+											11 => "1110101000001010",
+											12 => "0001111000110011",
+											13 => "1110101000001010",
+											14 => "0000001100000111",
+											15 => "0000110111110111",
+											16 => "1110110001110011",
+											17 => "0000110110111100",
+											18 => "1111110000001110",
+											19 => "1111110110100111",
+											20 => "0000001100011001",
+											21 => "1111111011011110",
+											22 => "1111111111010011",
+											23 => "0000000000010001",
+											24 => "0000001001110010");
+	signal y_out:	signed(31 downto 0) := (others => '0');
+	
+begin
+
+	filter: process(clk,rst)
+		variable x_in:		ARRAY25_16 := (others => (others => '0'));
+		variable y_temp:	signed(31 downto 0);
+	begin
+		if rst = '1' then
+			x_in := (others => (others => '0'));
+			y_temp := (others => '0');
+			y_out <= y_temp;
+		elsif rising_edge(clk) then
+			y_temp := (others => '0');
+			shift_loop: for i in 0 to 23 loop
+				x_in(24-i) := x_in(23-i);
+			end loop shift_loop;
+			x_in(0) := signed(x);
+			conv_loop: for i in 0 to 24 loop
+				y_temp := y_temp + b(i) * x_in(i);
+			end loop conv_loop;
+			y_out <= y_temp;
+		else
+			-- do nothing
+		end if;		
+	end process filter;
+	y <= std_logic_vector(y_out(31 downto 15));
+end arch;

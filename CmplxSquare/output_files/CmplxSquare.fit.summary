@@ -1,0 +1,20 @@
+Fitter Status : Successful - Mon Jul 13 06:40:21 2020
+Quartus Prime Version : 16.1.1 Build 200 11/30/2016 SJ Standard Edition
+Revision Name : CmplxSquare
+Top-level Entity Name : CmplxSquare_LPM
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 183 / 32,070 ( < 1 % )
+Total registers : 612
+Total pins : 196 / 457 ( 43 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 4,065,280 ( 0 % )
+Total RAM Blocks : 0 / 397 ( 0 % )
+Total DSP Blocks : 9 / 87 ( 10 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )
